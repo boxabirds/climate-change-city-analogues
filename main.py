@@ -10,7 +10,7 @@ import hashlib
 import sys
 
 # Initialize Nominatim API
-geolocator = Nominatim(user_agent="climate city analogue project")
+geolocator = Nominatim(user_agent="climate city analogue mapping project julian.harris@gmail.com")
 
 def simplify_geojson(geojson_obj, tolerance=0.005):
     simplified_features = []
@@ -29,6 +29,8 @@ def get_city_boundary(city_name, session):
         
         # Fetch boundary data
         response = session.get(url)
+
+        print(f"response for {city_name}: {response.text}")
         
         # Check for HTTP 403 error
         if response.status_code == 403:
