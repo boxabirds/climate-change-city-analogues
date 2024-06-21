@@ -26,10 +26,21 @@
             maxZoom: 18,
         }).addTo(map);
 
-        // Add GeoJSON data to the map
+        // Add GeoJSON data to the map and add labels
         for (var city in boundaries) {
-            L.geoJSON(boundaries[city]).addTo(map);
+            var geoJsonLayer = L.geoJSON(boundaries[city]).addTo(map);
+            var bounds = geoJsonLayer.getBounds();
+            var center = bounds.getCenter();
+
+            // Add a tooltip at the center of the polygon
+            L.marker(center, {
+                icon: L.divIcon({
+                    className: 'label',
+                    html: city,
+                    iconSize: [100, 40],
+                    iconAnchor: [50, 20]
+                })
+            }).addTo(map);
         }
     </script>
-</body>
-</html>
+</
