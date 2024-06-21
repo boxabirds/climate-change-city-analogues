@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+city_boundaries_cache/
+*.db
+*.val
+
 # C extensions
 *.so
 
