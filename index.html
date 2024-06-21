@@ -41,6 +41,20 @@
                     iconAnchor: [50, 20]
                 })
             }).addTo(map);
+
+            // Check if the city has today cities and add them to the tooltip
+            if (todayCities[city]) {
+                var todayCitiesText = "Today cities: " + todayCities[city].join(", ");
+                L.tooltip({
+                    permanent: true,
+                    direction: 'center',
+                    className: 'today-cities-tooltip'
+                })
+                .setContent(todayCitiesText)
+                .setLatLng(center)
+                .addTo(map);
+            }
         }
     </script>
-</
+</body>
+</html>

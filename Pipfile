@@ -10,6 +10,8 @@ requests = "*"
 shapely = "*"
 geojson = "*"
 requests-ratelimiter = "*"
+pandas = "*"
+diskcache = "*"
 
 [dev-packages]
 
